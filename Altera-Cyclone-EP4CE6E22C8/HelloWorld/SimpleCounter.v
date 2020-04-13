@@ -1,8 +1,7 @@
-// This is an example of a simple 32 bit up-counter called simple_counter.v
-// It has a single clock input and a 32-bit output port
-module simple_counter (input clock , output reg [3:0] counter_out); 
+module simple_counter (input clock , output reg [3:0] counter_out, output reg always_low); 
 always @ (posedge clock)// on positive clock edge
 begin  
 	counter_out <= #1 counter_out + 1;// increment counter
+	always_low <= 0;
 end 
 endmodule// end of module counter

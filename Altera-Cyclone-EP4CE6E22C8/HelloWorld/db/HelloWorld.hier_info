@@ -1,12 +1,14 @@
 |HelloWorld
+low_out <= simple_counter:inst6.always_low
+osc_clk => pll_slow:inst.inclk0
 led[0] <= simple_counter:inst6.counter_out[0]
 led[1] <= simple_counter:inst6.counter_out[1]
 led[2] <= simple_counter:inst6.counter_out[2]
 led[3] <= simple_counter:inst6.counter_out[3]
-osc_clk => pll_slow:inst.inclk0
 
 
 |HelloWorld|simple_counter:inst6
+clock => always_low~reg0.CLK
 clock => counter_out[0]~reg0.CLK
 clock => counter_out[1]~reg0.CLK
 clock => counter_out[2]~reg0.CLK
@@ -15,6 +17,7 @@ counter_out[0] <= counter_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 counter_out[1] <= counter_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 counter_out[2] <= counter_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 counter_out[3] <= counter_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+always_low <= always_low~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |HelloWorld|pll_slow:inst

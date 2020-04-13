@@ -1,1 +1,24 @@
+Install Quartus II (v18.1).
+Choose packages that support Cyclone 4 board.
+Install USB-Blaster driver for Windows.
 
+Create a schematic file (*.bdf).
+Create a verilog file for our counter (*.v), write some code.
+Create a clock source:
+- Tools -> IP Catalog -> Search for "ALTPLL".
+- Double-click on it, generate a Verilog file.
+- Configure its parameters (frequency..).
+Go to schematic tab, right-click -> select Insert -> Symbol
+Place the newly created clock in the schematic, and connect the clkout pin to our counter.
+Go to schematic tab, right-click -> select Insert -> Symbol
+Place a primitive input pin to the inclk0 pin of the PLL clock.
+
+Select Assignments -> Pin Planner.
+Assign a clock pin to the primitive input pin we just placed.
+
+Select Processing -> Start Compilation.
+
+Select Tools -> Programmer.
+Select "Add files.." -> Select our output file (*.sof)
+Click "Auto-detect" button so the software detects which board we're programming for.
+Click Start to program the FPGA.
